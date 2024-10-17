@@ -9,7 +9,7 @@ services:
     depends_on:
       - db
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/"]  # Замените на ваш реальный healthcheck endpoint
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]  
       interval: 30s
       timeout: 10s
       retries: 5
@@ -29,7 +29,7 @@ services:
   test:
     build:
       context: .
-      dockerfile: Dockerfile  # Используйте тот же Dockerfile, если ваши тесты работают в том же окружении
+      dockerfile: Dockerfile  
     container_name: movie-test
     depends_on:
       - backend
