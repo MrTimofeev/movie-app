@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css"> <!-- Внешний CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Список фильмов</h1>
+        <button id="loadMovies" class="btn btn-primary mb-3">Загрузить фильмы</button>
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th class="col-title" scope="col">Название</th>
+                        <th scope="col">Рейтинг</th>
+                        <th scope="col">IMDb рейтинг</th>
+                        <th class="col-genre" scope="col">Жанр</th>
+                        <th scope="col">Режисер</th>
+                        <th scope="col">Постер</th>
+                    </tr>
+                </thead>
+                <tbody id="movieTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Модальное окно для полного описания -->
+    <div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="descriptionModalLabel">Description</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modalDescription"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/scripts.js"></script> <!-- Подключение JS -->
+</body>
+</html>

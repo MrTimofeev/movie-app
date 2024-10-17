@@ -1,0 +1,72 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #343a40;
+    font-weight: bold;
+}
+
+table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+}
+
+td {
+    vertical-align: middle;
+    text-align: center;
+    word-break: break-word; /* Перенос длинных слов */
+    max-width: 150px; /* Ограничение ширины */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+img {
+    border-radius: 8px;
+    object-fit: cover;
+    height: 80px;
+    width: auto;
+}
+
+/* Ограничение ширины столбцов */
+.col-title, .col-genre {
+    max-width: 120px;
+}
+
+/* Адаптивный вид для маленьких экранов */
+@media (max-width: 768px) {
+    .table thead {
+        display: none;
+    }
+    .table tr {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .table td {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 50%;
+        position: relative;
+    }
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
